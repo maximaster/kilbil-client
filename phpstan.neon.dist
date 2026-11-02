@@ -1,0 +1,15 @@
+# Consumer-view static analysis: the generated tree is held to the same
+# maximum level a consumer would run over it, with no baseline, no
+# excludePaths and no ignoreErrors.
+includes:
+    - vendor/phpstan/phpstan-strict-rules/rules.neon
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+parameters:
+    tmpDir: ./build/cache/phpstan
+    treatPhpDocTypesAsCertain: false
+    level: max
+    paths:
+        - src
+        - generated
+        - tests

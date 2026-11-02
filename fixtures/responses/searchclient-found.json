@@ -1,0 +1,97 @@
+{
+  "result_code": "0",
+  "result_text": "Клиент найден",
+  "client_id": "4004565",
+  "state": "1",
+  "bonus_percent": "10.00",
+  "discount_percent": "0.00",
+  "bonus_balance": 323.15,
+  "bonus_out_percent": "100",
+  "program_name": "Бонусная 10%",
+  "program_type": "0",
+  "max_bill_bonus_out": "328.30",
+  "max_bonus_out": "323.16",
+  "only_with_cards": "0",
+  "use_sms_code": "0",
+  "use_discount_sms": "0",
+  "sms_code_sum": 0,
+  "card_id": "3968102",
+  "card_state": "0",
+  "card_code": "200082",
+  "card_barcode": "9990012000826",
+  "phone": "79129999999",
+  "birth_date": "1997-10-02",
+  "first_name": "Иван",
+  "middle_name": "Иванович",
+  "last_name": "Иванов",
+  "full_name": "Иванов Иван Иванович",
+  "sex": "1",
+  "client_email": "example@email.ru",
+  "discounted_total": "328.30",
+  "discount": "0.00",
+  "activate_client_type": "1",
+  "replace_card_type": "1",
+  "referral_system_is_used": "0",
+  "purchases_sum": "14841.24",
+  "status_name": "Серебро",
+  "next_period_status_name": "нет",
+  "next_status_name": "Золото",
+  "next_status_purchases_sum": "50000.00",
+  "next_status_bonus_percent": "15",
+  "next_status_discount_percent": "0",
+  "progressive_scale_type": 0,
+  "sum_to_next_status": "35158.76",
+  "phone_is_free": "0",
+  "outer_systems_interface_type": 10,
+  "special_days_types": [
+    {"id": 90, "aname": "День свадьбы", "value": "2017-07-07"},
+    {"id": 265, "aname": "День рождение ребёнка", "value": null}
+  ],
+  "not_to_send_sms": 0,
+  "not_to_send_email": 0,
+  "tags": ["VIP", "подарок"],
+  "top_sales": ["Товар 3", "Товар 2"],
+  "program_write_off_type": null,
+  "allow_manual_card_spend": 0,
+  "_bill_data": {
+    "items": [
+      {
+        "code": "2137",
+        "flags": 0,
+        "price": 130,
+        "new_price_action_id": null,
+        "new_price_respond_id": null,
+        "new_price_limit_action_id": null,
+        "new_price_limit_respond_id": null,
+        "new_price_limits_counter_quantity": null
+      },
+      {
+        "code": "3957",
+        "flags": 1,
+        "price": 59,
+        "new_price_action_id": 32243,
+        "new_price_respond_id": 138499,
+        "new_price_limit_action_id": null,
+        "new_price_limit_respond_id": null,
+        "new_price_limits_counter_quantity": null
+      }
+    ]
+  },
+  "cards": [
+    {
+      "code": "0061",
+      "barcode": "300061",
+      "card_id": 10963328,
+      "outer_systems_interface_name": "Виртуальная карта",
+      "outer_systems_interface_type": null
+    }
+  ],
+  "interfaces": [
+    {
+      "interface_id": "1234567890",
+      "interface_os": "",
+      "interface_name": "Telegram",
+      "interface_type": 0
+    }
+  ]
+}

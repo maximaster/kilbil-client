@@ -1,0 +1,25 @@
+{
+  "result_code": 0,
+  "data": [
+    {
+      "id": "6553",
+      "name": "Шаблонная программа",
+      "type": "Бонусная",
+      "bonus_percent": "3.00",
+      "bonus_pay_percent": "50.00",
+      "discount_percent": "0.00",
+      "begin_date": null,
+      "is_default": "t"
+    },
+    {
+      "id": "6567",
+      "name": "VIP программа",
+      "type": "Бонусная",
+      "bonus_percent": "0.00",
+      "bonus_pay_percent": "100.00",
+      "discount_percent": "0.00",
+      "begin_date": null,
+      "is_default": "f"
+    }
+  ]
+}

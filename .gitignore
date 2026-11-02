@@ -1,0 +1,9 @@
+/build/
+/vendor/
+
+# A library pins its own dev toolchain at install time, not in the lock file.
+/composer.lock
+
+/.php-cs-fixer.cache
+/.phpunit.result.cache
+/.phpunit.cache/

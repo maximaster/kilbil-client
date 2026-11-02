@@ -1,0 +1,65 @@
+name: "Continuous Integration"
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "*"
+  pull_request:
+    branches:
+      - "main"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: "Lint (cs-fixer, rector)"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v7"
+      - uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "8.4"
+          coverage: "none"
+      - uses: "ramsey/composer-install@v4"
+      - run: "composer validate --strict"
+      - name: "Check coding style (php-cs-fixer)"
+        run: "composer lint:cs-fixer"
+      - name: "Check refactorings (rector)"
+        run: "composer lint:rector"
+
+  static-analysis:
+    name: "Static analysis (PHPStan)"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v7"
+      - uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "8.4"
+          coverage: "none"
+      - uses: "ramsey/composer-install@v4"
+      - run: "composer lint:phpstan"
+
+  unit-tests:
+    name: "Unit tests"
+    needs: ["lint", "static-analysis"]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ["8.4"]
+        os: ["ubuntu-latest", "macos-latest"]
+        composer-deps: ["lowest", "highest"]
+    steps:
+      - uses: "actions/checkout@v7"
+      - uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php }}"
+          coverage: "none"
+      - uses: "ramsey/composer-install@v4"
+        with:
+          dependency-versions: "${{ matrix.composer-deps }}"
+      - run: "composer test"
