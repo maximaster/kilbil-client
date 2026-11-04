@@ -19,12 +19,12 @@ final readonly class ProcessSale200Content
      * @param ?list<mixed> $coupons_out
      */
     public function __construct(
-        public ?array $_bill_body,
-        public ProcessSale200ContentBillData $_bill_data,
-        public ?string $_bill_footer,
-        public ?string $_bill_header,
         public string|int $result_code,
         public string $result_text,
+        public ?array $_bill_body = null,
+        public ?ProcessSale200ContentBillData $_bill_data = null,
+        public ?string $_bill_footer = null,
+        public ?string $_bill_header = null,
         public ?array $cashier_messages = null,
         public ?array $coupons_out = null,
     ) {

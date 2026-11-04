@@ -1196,8 +1196,7 @@ paths:
                     description: код выполнения
                     example: 1
                   client_id:
-                    type: integer
-                    format: int
+                    type: string
                     description: id клиента в лояльности
                     example: 4004565
                   result_code:
@@ -2214,10 +2213,6 @@ paths:
                 required:
                 - result_code
                 - result_text
-                - _bill_data
-                - _bill_body
-                - _bill_header
-                - _bill_footer
                 type: object
                 properties:
                   result_code:
@@ -2239,7 +2234,9 @@ paths:
                     - discount
                     - bonus_out
                     - discounted_total
-                    type: object
+                    type:
+                    - object
+                    - 'null'
                     description: информация по расчету документа
                     properties:
                       items:
@@ -3391,7 +3388,9 @@ paths:
                     description: код результата, где 0 - успешно
                     example: '0'
                   result_text:
-                    type: string
+                    type:
+                    - string
+                    - 'null'
                     description: текст описания результата
                     example: Код отправлен в СМС
                   type_confirmation_code:

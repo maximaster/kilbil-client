@@ -17,7 +17,7 @@ final readonly class AskConfirmPhone200Content
 {
     public function __construct(
         public string|int $result_code,
-        public string $result_text,
+        public ?string $result_text,
         public ?int $success = null,
         public ?AskConfirmPhone200ContentTypeConfirmationCode $type_confirmation_code = null,
     ) {
